@@ -1,18 +1,16 @@
 {
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.1.0",
     "aws-sdk": "~2",
-    "js-logger": "^1.4.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.0.1",
     "babel-loader": "^8.0.2",
     "babel-plugin-js-logger": "^1.0.17",
-    "json-loader": "^0.5.4",
-    "webpack": "^4.1.1",
+    "js-logger": "^1.4.1",
+    "json-loader": "^0.5.7",
+    "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "postinstall": "webpack --config ../webpack.config.js "
+    "postinstall": "webpack --config ../webpack.config.js && ([ \"$NODE_ENV\" == 'production' ] && rm -rf node_modules || :)"
   }
 }
